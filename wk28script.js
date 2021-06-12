@@ -29,6 +29,7 @@
 
 let $inputCep = document.querySelector('#inputCep');
 let $submitBtn = document.querySelector('.submitBtn');
+let $clearBtn = document.querySelector('.clearBtn');
 let $returnedError = document.querySelector('.returnedError');
 let $returnedAddress = document.querySelector('.returnedAddress');
 let $returnedDistrict = document.querySelector('.returnedDistrict');
@@ -44,7 +45,16 @@ const getCleanCep = () => {
     return cleanCep
 };
 
-const request = async () => {
+const clear = () => {
+    $returnedAddress.textContent = '⠀';
+    $returnedDistrict.textContent = '⠀';
+    $returnedCity.textContent = '⠀';
+    $returnedState.textContent = '⠀';
+    $returnedError.textContent = '⠀';
+    $inputCep.value = "";
+};
+
+const requestData = async () => {
     try {
         const requestUrl = `https://ws.apicep.com/cep.json?code=${getCleanCep()}`;
         const response = await fetch(requestUrl);
@@ -57,7 +67,7 @@ const request = async () => {
 };
 
 function requestClick() {
-    request().then(
+    requestData().then(
         (data) => {
 
             console.log(data)
@@ -88,6 +98,7 @@ $inputCep.addEventListener("keyup", function (event) {
     }
 });
 $submitBtn.addEventListener('click', requestClick, false);
+$clearBtn.addEventListener('click', clear, false);
 
 
 
