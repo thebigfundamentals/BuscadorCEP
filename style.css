@@ -156,7 +156,7 @@ header {
 	
 	.cepInput {
 		box-sizing: border-box;
-		padding-bottom: 0.5em;
+		padding-bottom: 0.2em;
 	}
 	
 	#inputCep {
@@ -183,8 +183,10 @@ header {
 		color: #0081a7;
 		font-size: 0.7em;
 		text-decoration: underline #00b0b95e;
-		margin-top: 0.8em;
-		margin-bottom: 0.1em;
+	}
+
+	.address {
+		margin-top: 0.2em !important;
 	}
 	
 	.returnedError {
@@ -192,6 +194,7 @@ header {
 		color: #f07167;
 		font-style: italic;
 		font-size: 0.5em;
+		margin-top: 1em;
 	}
 	
 	.returnedCity, .returnedAddress, .returnedState, .returnedDistrict {
