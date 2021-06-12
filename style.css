@@ -1,0 +1,207 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+    box-sizing: border-box;
+	font-family: 'Rubik', sans-serif;
+
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+header {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 0.5em;
+	font-size: 4em;
+	font-weight: 600;
+	color: #f07167;
+	border-bottom: #fed9b7 2px solid;
+	text-align: center;
+}
+
+.content {
+	display: flex;
+	justify-content: center;
+	
+}
+
+.rightContent {
+	width: 40%;
+	margin-left: 5em;
+}
+
+.cepInput {
+	box-sizing: border-box;
+	padding-bottom: 0.5em;
+}
+
+#inputCep {
+	color: #00afb9;
+	font-size: 1em;
+}
+
+.retornoCep {
+	padding-top: 0.5em;
+}
+
+.inputLabel {
+	font-weight: 500;
+	color: #0081a7;
+	font-size: 1.1em;
+}
+
+.submitBtn {
+	font-size: 1em;
+}
+
+.city, .address, .state, .district {
+	font-weight: 500;
+	color: #0081a7;
+	font-size: 1.1em;
+	text-decoration: underline #00b0b95e;
+	margin-top: 0.8em;
+	margin-bottom: 0.1em;
+}
+
+.returnedError {
+	font-weight: 300;
+	color: #f07167;
+	font-style: italic;
+	font-size: 0.8em;
+}
+
+.returnedCity, .returnedAddress, .returnedState, .returnedDistrict {
+	font-weight: 400;
+	color: #f07167;
+	
+}
+
+.pinkpantherImg {
+    height: 320px;
+	
+}
+
+@media (max-width: 540px) {
+
+	.returnedError {
+		margin-top: 0.5em;
+		display: block;
+	}
+
+	header {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 0.5em;
+		font-size: 2em;
+		font-weight: 600;
+		color: #f07167;
+		border-bottom: #fed9b7 2px solid;
+		text-align: center;
+	}
+	
+	.content {
+		display: flex;
+		justify-content: center;
+		
+	}
+	
+	.rightContent {
+		width: 40%;
+		margin-left: 2em;
+	}
+	
+	.cepInput {
+		box-sizing: border-box;
+		padding-bottom: 0.5em;
+	}
+	
+	#inputCep {
+		color: #00afb9;
+		font-size: 0.5em;
+	}
+	
+	.retornoCep {
+		padding-top: 0.5em;
+	}
+	
+	.inputLabel {
+		font-weight: 500;
+		color: #0081a7;
+		font-size: 0.7em;
+	}
+
+	.submitBtn {
+		font-size: 0.5em;
+	}
+	
+	.city, .address, .state, .district {
+		font-weight: 500;
+		color: #0081a7;
+		font-size: 0.7em;
+		text-decoration: underline #00b0b95e;
+		margin-top: 0.8em;
+		margin-bottom: 0.1em;
+	}
+	
+	.returnedError {
+		font-weight: 300;
+		color: #f07167;
+		font-style: italic;
+		font-size: 0.5em;
+	}
+	
+	.returnedCity, .returnedAddress, .returnedState, .returnedDistrict {
+		font-weight: 400;
+		color: #f07167;
+		font-size: 0.5em;
+		
+	}
+	
+	.pinkpantherImg {
+		height: 260px;
+	}
+};
