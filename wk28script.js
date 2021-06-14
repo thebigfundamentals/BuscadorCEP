@@ -27,69 +27,17 @@
 
 'use strict';
 
-let $inputCep = document.querySelector('#inputCep');
-let $submitBtn = document.querySelector('.submitBtn');
-let $clearBtn = document.querySelector('.clearBtn');
-let $returnedError = document.querySelector('.returnedError');
-let $returnedAddress = document.querySelector('.returnedAddress');
-let $returnedDistrict = document.querySelector('.returnedDistrict');
-let $returnedCity = document.querySelector('.returnedCity');
-let $returnedState = document.querySelector('.returnedState');
-
-
-// callback
-
-const getCep = () => { return $inputCep.value };
-const getCleanCep = () => {
-    let cleanCep = getCep().replace(/[^\d]/g, '');
-    return cleanCep
-};
-
-const clear = () => {
-    $returnedAddress.textContent = '⠀';
-    $returnedDistrict.textContent = '⠀';
-    $returnedCity.textContent = '⠀';
-    $returnedState.textContent = '⠀';
-    $returnedError.textContent = '⠀';
-    $inputCep.value = "";
-};
-
-const requestData = async () => {
-    try {
-        const requestUrl = `https://ws.apicep.com/cep.json?code=${getCleanCep()}`;
-        const response = await fetch(requestUrl);
-        const responseData = await response.json();
-        return responseData
-    } catch (error) {
-        console.error(error);
-    }
-
-};
-
-function requestClick() {
-    requestData().then(
-        (data) => {
-
-            console.log(data)
-
-            if (data.statusText === 'ok') {
-                $returnedAddress.textContent = '⠀' + data.address;
-                $returnedDistrict.textContent = '⠀' + data.district;
-                $returnedCity.textContent = '⠀' + data.city;
-                $returnedState.textContent = '⠀' + data.state;
-                $returnedError.textContent = `CEP pesquisado: ${data.code}`;
-            }
-            if (data.statusText === 'bad_request') {
-
-                $returnedError.textContent = data.message;
-            }
-            if (data.statusText === 'not_found') {
-
-                $returnedError.textContent = data.message;
-            }
-        }
-    );
-};
+import { getCleanCep, clear, requestData, requestClick } from '/module.js';
+import {
+    $inputCep,
+    $submitBtn,
+    $clearBtn,
+    $returnedError,
+    $returnedAddress,
+    $returnedDistrict,
+    $returnedCity,
+    $returnedState
+} from './variables.js';
 
 $inputCep.addEventListener("keyup", function (event) {
     if (event.keyCode === 13) {
