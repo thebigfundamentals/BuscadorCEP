@@ -228,7 +228,7 @@ header {
 		margin-top: 0.2em !important;
 	}
 	
-	.returnedError {
+	.returnedStatus {
 		font-weight: 300;
 		color: #f07167;
 		font-style: italic;
