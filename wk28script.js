@@ -32,7 +32,7 @@ import {
     $inputCep,
     $submitBtn,
     $clearBtn,
-    $returnedError,
+    $returnedMessage,
     $returnedAddress,
     $returnedDistrict,
     $returnedCity,
