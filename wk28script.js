@@ -27,7 +27,7 @@
 
 'use strict';
 
-import { getCleanCep, clear, requestData, requestClick } from '/module.js';
+import { getCleanCep, clear, requestData, requestClick } from './module.js';
 import {
     $inputCep,
     $submitBtn,
