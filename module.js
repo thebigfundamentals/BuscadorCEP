@@ -4,11 +4,12 @@ import {
     $inputCep,
     $submitBtn,
     $clearBtn,
-    $returnedError,
     $returnedAddress,
     $returnedDistrict,
     $returnedCity,
-    $returnedState
+    $returnedState,
+    $loading,
+    $returnedMessage
 } from './variables.js';
 
 export const getCleanCep = () => {
@@ -22,12 +23,14 @@ export const clear = () => {
     $returnedDistrict.textContent = '⠀';
     $returnedCity.textContent = '⠀';
     $returnedState.textContent = '⠀';
-    $returnedError.textContent = '⠀';
+    $returnedMessage.textContent = '';
     $inputCep.value = "";
 };
 
 export const requestData = async () => {
     try {
+        $returnedMessage.textContent = '';
+        $loading.removeAttribute('hidden');
         const requestUrl = `https://ws.apicep.com/cep.json?code=${getCleanCep()}`;
         const response = await fetch(requestUrl);
         const responseData = await response.json();
@@ -49,16 +52,17 @@ export function requestClick() {
                 $returnedDistrict.textContent = '⠀' + data.district;
                 $returnedCity.textContent = '⠀' + data.city;
                 $returnedState.textContent = '⠀' + data.state;
-                $returnedError.textContent = `CEP pesquisado: ${data.code}`;
+                $returnedMessage.textContent = `CEP pesquisado: ${data.code}`;
             }
             if (data.statusText === 'bad_request') {
 
-                $returnedError.textContent = data.message;
+                $returnedMessage.textContent = data.message;
             }
             if (data.statusText === 'not_found') {
 
-                $returnedError.textContent = data.message;
+                $returnedMessage.textContent = data.message;
             }
+            $loading.setAttribute('hidden', '');
         }
     );
 };
